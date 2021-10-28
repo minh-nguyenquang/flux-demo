@@ -1,0 +1,13 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: covergo-poc-helmchart
+  namespace: flux-system
+spec:
+  interval: 10m
+  url: ssh://git@github.com/minh-nguyenquang/poc-helmchart.git
+  ref:
+    tag: 0.2.0
+  secretRef:
+    name: flux-system
