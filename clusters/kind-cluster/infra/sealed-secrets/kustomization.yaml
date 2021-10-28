@@ -10,3 +10,6 @@ configMapGenerator:
     namespace: flux-system
     files:
       - values.yaml=values/sealed-secrets.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
