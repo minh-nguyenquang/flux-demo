@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sealed-secrets
+  namespace: flux-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: "."
+      version: '0.2.0'
+      sourceRef:
+        kind: GitRepository
+        name: covergo-poc-helmchart
+        namespace: flux-system
+      interval: 5m
+  valuesFrom:
+    - kind: ConfigMap
+      name: sealed-secrets-values

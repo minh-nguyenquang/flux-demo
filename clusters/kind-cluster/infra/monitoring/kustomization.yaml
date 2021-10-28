@@ -1,0 +1,28 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: k8s-component-monitoring
+
+resources:
+  - namespace.yaml
+  - release.yaml
+
+configMapGenerator:
+  - name: kube-prometheus-stack-values
+    files:
+      - values.yaml=values/kube-prometheus-stack.yaml
+  - name: loki-values
+    files:
+      - values.yaml=values/loki.yaml
+  - name: prometheus-blackbox-exporter-values
+    files:
+      - values.yaml=values/prometheus-blackbox-exporter.yaml
+  - name: promtail-values
+    files:
+      - values.yaml=values/promtail.yaml
+  - name: tempo-values
+    files:
+      - values.yaml=values/tempo.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
