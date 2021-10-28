@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: "."
-      version: '0.1.0'
+      version: '0.2.0'
       sourceRef:
         kind: GitRepository
         name: covergo-poc-helmchart
@@ -18,6 +18,8 @@ spec:
       name: kube-prometheus-stack-values
     - kind: ConfigMap
       name: loki-values
+    - kind: ConfigMap
+      name: prometheus-blackbox-exporter-values
     - kind: ConfigMap
       name: promtail-values
     - kind: ConfigMap

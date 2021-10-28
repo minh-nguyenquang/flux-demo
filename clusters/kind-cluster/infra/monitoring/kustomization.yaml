@@ -14,6 +14,9 @@ configMapGenerator:
   - name: loki-values
     files:
       - values.yaml=values/loki.yaml
+  - name: prometheus-blackbox-exporter-values
+    files:
+      - values.yaml=values/prometheus-blackbox-exporter.yaml
   - name: promtail-values
     files:
       - values.yaml=values/promtail.yaml

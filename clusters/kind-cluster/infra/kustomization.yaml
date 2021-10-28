@@ -4,7 +4,9 @@ kind: Kustomization
 
 bases:
   - sealed-secrets
-  # - monitoring
+  - monitoring
+  - scaling
+  - certificate
 
 resources:
   - git-repository.yaml
