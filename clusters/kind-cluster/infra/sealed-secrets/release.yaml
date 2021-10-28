@@ -13,9 +13,7 @@ spec:
         kind: GitRepository
         name: covergo-poc-helmchart
         namespace: flux-system
-      interval: 1m
-  values:
-    sealedSecrets:
-      enabled: enabled
-    sealed-secrets:
-      secretName: sealed-secrets-tls
+      interval: 5m
+  valuesFrom:
+    - kind: ConfigMap
+      name: sealed-secrets-values
