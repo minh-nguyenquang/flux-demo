@@ -8,7 +8,7 @@ resources:
   - release.yaml
 
 configMapGenerator:
-  - name: aws-node-termination-handler
+  - name: aws-node-termination-handler-values
     files:
       - values.yaml=values/aws-node-termination-handler.yaml
 
